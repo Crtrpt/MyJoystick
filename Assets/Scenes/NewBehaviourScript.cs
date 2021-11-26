@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    GameObject sphere;
+    GameObject unit;
   
     void Start()
     {

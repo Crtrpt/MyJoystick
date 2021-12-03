@@ -799,7 +799,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 1.02e-43, z: NaN, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1002,7 +1002,7 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.046687722
+      value: -0.08859742
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -1012,27 +1012,27 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18868029
+      value: 0.2043079
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.042069826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9991147
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -1047,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 355.178
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -1500,20 +1500,6 @@ MonoBehaviour:
   speed: 2
   variableJoystick: {fileID: 0}
   rb: {fileID: 0}
---- !u!114 &1114040585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114040580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510facfe402ce134baf306cce504b32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variableJoystick: {fileID: 1114040581}
-  testText: {fileID: 1434177188}
 --- !u!1 &1323851777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,8 +1512,6 @@ GameObject:
   - component: {fileID: 1323851781}
   - component: {fileID: 1323851780}
   - component: {fileID: 1323851779}
-  - component: {fileID: 1323851783}
-  - component: {fileID: 1323851782}
   m_Layer: 5
   m_Name: Function1
   m_TagString: Untagged
@@ -1634,33 +1618,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323851777}
   m_CullTransparentMesh: 0
---- !u!114 &1323851782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323851777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449e6a20f945aaf4b964f32af8f91a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  f1: {fileID: 1323851779}
-  f2: {fileID: 1563750041}
-  animator: {fileID: 648229643}
---- !u!114 &1323851783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323851777}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d0d0a1b32034647b19bdbea80bb602, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1434177186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,38 +1937,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567106711}
   m_CullTransparentMesh: 0
---- !u!1 &1695023955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230,
-    type: 3}
-  m_PrefabInstance: {fileID: 1061629471}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1695023956 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
-    type: 3}
-  m_PrefabInstance: {fileID: 1061629471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695023955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42844a4fccbd54746b90cade4ff70f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1695023959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695023955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27e141d94822b64eb88bb877b90a1b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variableJoystick: {fileID: 1695023956}
-  testText: {fileID: 1056832133}
 --- !u!1 &1729275852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +1950,7 @@ GameObject:
   - component: {fileID: 1729275854}
   - component: {fileID: 1729275853}
   - component: {fileID: 1729275857}
+  - component: {fileID: 1729275859}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2132,6 +2058,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d0d0a1b32034647b19bdbea80bb602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1729275859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729275852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e6a20f945aaf4b964f32af8f91a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack_value: 0
+  attack_distance: 0
+  defense_value: 0
+  blood_value: 0
+  body: {fileID: 648229640}
+  f1: {fileID: 1323851779}
+  f2: {fileID: 1563750041}
+  f3: {fileID: 201820775}
+  animator: {fileID: 648229643}
+  variableJoystick: {fileID: 1114040581}
+  testText: {fileID: 1434177188}
 --- !u!1 &1875069937
 GameObject:
   m_ObjectHideFlags: 0

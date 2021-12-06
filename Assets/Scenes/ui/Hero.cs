@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using uPLibrary.Networking.M2Mqtt;
 
 public class Hero : MonoBehaviour
 {
@@ -29,12 +31,12 @@ public class Hero : MonoBehaviour
      * 物品盒子
      *
      */
-    List<Object> knapsack;
+    List<UnityEngine.Object> knapsack;
 
     /**
      * 技能列表
      */
-    List<Object> skill;
+    List<UnityEngine.Object> skill;
 
     /**
      * 角色主体
@@ -47,11 +49,15 @@ public class Hero : MonoBehaviour
 
     public Button f3;
 
+    public Button f4;
+
     public Animator animator;
 
     public VariableJoystick variableJoystick;
 
     public Text testText;
+
+    public Vector2 source =new Vector2(0,1);
 
 
     private void FixedUpdate()
@@ -65,42 +71,89 @@ public class Hero : MonoBehaviour
         //运动
 
         
-        if (v != 0 && h!=0)
+  
+
+        float angle = 0;
+
+        var to = new Vector2(h, v);
+        angle = Vector2.Angle(source, to);
+        // > 0.5 表示开始移动
+        if (v > 0.5 || h > 0.5)
+        {
+          
+
+            if (angle < 5 && angle > -5)
+            {
+
+            }
+            else {
+               
+         
+                body.transform.eulerAngles = new Vector3(
+                body.transform.eulerAngles.x,
+                body.transform.eulerAngles.y + angle,
+                body.transform.eulerAngles.z);
+                //source = to;
+
+            }
+
+           
+        }
+
+
+        if (v != 0)
         {
             animator.SetBool("run", true);
-            animator.speed = 0.5f+Mathf.Abs(v);
+            animator.speed = 0.5f + Math.Max(Mathf.Abs(v), Math.Abs(h));
+            body.transform.Translate(body.transform.forward * 10 * Time.deltaTime);
         }
-        else {
+        else
+        {
             animator.SetBool("run", false);
         }
 
-       var a = body.transform.rotation;
 
-       
-        if (v >= 0)
-       {
-            a.y = 0;
-            a.x = 0;
-            a.z = 0;
-        }
-        else {
-            a.y = 180;
-            a.x = 0;
-            a.z = 0;
-        }
-           
 
-        body.transform.rotation = a;
-        testText.text = "v" + v + "  h:" + h + " a ";
+
+
+        testText.text = "v" + v + "  h:" + h + " a " + angle+" source x:"+source.x+" source y:"+source.y+" to x:"+to.x+" to y:"+to.y;
+
+    }
+
+
+    private void Rotate(Transform t,float h,float v,float s) {
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        var m = new MqttClient("broker.emqx.io");
+        m.Connect("unity");
+        if (!m.IsConnected)
+        {
+            Debug.Log("失败");
+        }
+        m.Publish("/unity", System.Text.Encoding.Default.GetBytes("hello"));
         Debug.Log("初始化角色 属性");
         this.f2.onClick.AddListener(Attach);
         this.f3.onClick.AddListener(Jump);
+        this.f4.onClick.AddListener(Rotate);
+
+    }
+
+    private void Rotate()
+    {
+
+       
+
+       
+        float angle = Vector2.Angle(new Vector2(0,1), new Vector2(-1,0 ));
+        Debug.Log("角度" + angle);
+
+        var angle1 = Vector2.Angle(new Vector2(0, 1), new Vector2(0, -1));
+        Debug.Log("F角度2" +  angle1);
+
     }
 
     void Attach()
@@ -112,7 +165,7 @@ public class Hero : MonoBehaviour
 
     void Jump()
     {
-        //跳跃
+        //跳跃 抛物线
 
         var postion = this.body.transform.position;
         postion.y = 1;
